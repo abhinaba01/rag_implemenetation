@@ -213,21 +213,3 @@ docs/images/            the charts
 gitignored. Rebuild them with `embed.py` and `bm25.py`.
 
 ---
-
-## Known limitations
-
-Worth reading before trusting any number above.
-
-- **Recall is lenient on multi-hop.** A question counts as a hit when *any* of its
-  expected chunks appears, so a multi-hop question that needed two passages scores
-  a hit on one. True multi-hop performance is lower than the table shows.
-- **The question set is small.** 46 answerable questions means a single question is
-  worth about two points of recall, so small gaps between strategies are noise.
-  The 6-question ambiguous category is especially thin.
-- **One corpus, one embedding model.** Everything here is the Pydantic docs
-  embedded with MiniLM. The ranking of these strategies may not transfer.
-- **Answer quality is not scored.** The metrics measure retrieval only. The gold
-  set carries a grading rubric for each question, but nothing grades generated
-  answers against it yet.
-- **Timings are wall-clock on one CPU machine**, useful for relative comparison
-  and nothing more.
