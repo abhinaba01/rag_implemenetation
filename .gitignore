@@ -1,0 +1,22 @@
+# --- secrets: never commit these ---
+.env
+.env.*
+!.env.example
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# --- generated index artifacts ---
+# Rebuild with: python pipeline/embed.py && python pipeline/bm25.py
+index/faiss.index
+index/bm25.pkl
+index/chunk_ids.json
+
+# --- os noise ---
+.DS_Store
+Thumbs.db
